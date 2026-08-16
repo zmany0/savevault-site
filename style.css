@@ -1,0 +1,224 @@
+/* Global Styles */
+:root {
+    --bg-color: #0f1115; /* Dark gaming theme */
+    --text-color: #e2e8f0;
+    --primary-color: #3b82f6; /* Modern Blue */
+    --secondary-color: #1e293b;
+    --accent-color: #60a5fa;
+}
+
+body {
+    font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
+    background-color: var(--bg-color);
+    color: var(--text-color);
+    margin: 0;
+    padding: 0;
+    line-height: 1.6;
+}
+
+a {
+    color: var(--accent-color);
+    text-decoration: none;
+}
+
+a:hover {
+    text-decoration: underline;
+}
+
+.container {
+    width: 85%;
+    max-width: 1000px;
+    margin: 0 auto;
+}
+
+/* Header */
+header {
+    background-color: var(--secondary-color);
+    padding: 1.5rem 0;
+    border-bottom: 2px solid var(--primary-color);
+}
+
+header .container {
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    direction: ltr; /* تثبيت اتجاه الهيدر من اليسار لليمين دائماً */
+}
+
+header h1 {
+    margin: 0;
+    font-size: 1.8rem;
+    color: var(--primary-color);
+    display: flex; /* لضمان محاذاة الشعار والنص بشكل مثالي */
+    align-items: center;
+}
+
+/* App Logo */
+.app-logo {
+    height: 70px; /* حجم الشعار الجديد */
+    width: auto;
+    margin-right: 10px; /* مسافة ثابتة من اليمين */
+}
+
+nav {
+    display: flex;
+    align-items: center;
+    gap: 20px;
+    direction: rtl; /* توجيه الروابط العربية لتقرأ بشكل صحيح */
+}
+
+/* استثناء للنسخة الإنجليزية ليكون الناف بار بداخلها من اليسار لليمين */
+html[dir="ltr"] nav {
+    direction: ltr;
+}
+
+/* تثبيت زر اللغة في أقصى اليمين في النسخة العربية */
+html[dir="rtl"] nav .lang-switch {
+    order: -1; 
+}
+
+nav a {
+    color: var(--text-color);
+    font-weight: 500;
+    padding-bottom: 5px; 
+    border-bottom: 2px solid transparent; 
+    transition: all 0.3s ease;
+}
+
+nav a:hover, nav a.active {
+    color: var(--primary-color);
+    text-decoration: none;
+}
+
+/* تمييز الصفحة الحالية */
+nav a.active {
+    border-bottom: 2px solid var(--primary-color);
+}
+
+/* Language Switcher Button */
+.lang-switch {
+    border: 1px solid var(--primary-color);
+    padding: 5px 15px;
+    border-radius: 4px;
+    color: var(--primary-color) !important;
+    transition: all 0.3s ease;
+    border-bottom: 1px solid var(--primary-color) !important; 
+}
+
+.lang-switch:hover {
+    background-color: var(--primary-color);
+    color: #fff !important;
+}
+
+/* Hero Section */
+.hero {
+    text-align: center;
+    padding: 4rem 0;
+}
+
+.hero h2 {
+    font-size: 2.5rem;
+    margin-bottom: 1rem;
+}
+
+.hero p {
+    font-size: 1.2rem;
+    color: #94a3b8;
+    max-width: 700px;
+    margin: 0 auto 2rem auto;
+}
+
+.btn {
+    display: inline-block;
+    background-color: var(--primary-color);
+    color: #fff;
+    padding: 12px 24px;
+    border-radius: 4px;
+    font-size: 1.1rem;
+    font-weight: bold;
+    transition: background-color 0.3s;
+}
+
+.btn:hover {
+    background-color: #2563eb;
+    text-decoration: none;
+    color: #fff;
+}
+
+/* Features */
+.features {
+    display: flex;
+    justify-content: space-between;
+    flex-wrap: wrap;
+    gap: 20px;
+    margin-bottom: 4rem;
+}
+
+.feature-card {
+    background-color: var(--secondary-color);
+    padding: 2rem;
+    border-radius: 8px;
+    flex: 1;
+    min-width: 250px;
+    border-top: 3px solid var(--primary-color);
+}
+
+.feature-card h3 {
+    margin-top: 0;
+    color: var(--primary-color);
+}
+
+/* Page Content (Privacy/Terms) */
+.page-content {
+    padding: 3rem 0;
+}
+
+.page-content h2 {
+    color: var(--primary-color);
+    border-bottom: 1px solid #334155;
+    padding-bottom: 10px;
+}
+
+.page-content h3 {
+    margin-top: 2rem;
+}
+
+.page-content ul {
+    list-style-type: square;
+    margin-left: 20px;
+    margin-right: 20px;
+}
+
+/* Footer */
+footer {
+    text-align: center;
+    padding: 2rem 0;
+    background-color: var(--secondary-color);
+    color: #64748b;
+    margin-top: auto;
+}
+
+/* App Screenshots Gallery Styles */
+.hero-gallery {
+    display: flex;
+    flex-wrap: wrap;
+    gap: 15px;
+    justify-content: center;
+    margin-top: 3rem;
+    padding: 0 20px;
+    direction: ltr; /* إجبار الصور على الترتيب من اليسار لليمين دائماً */
+}
+
+.app-screenshot {
+    width: 100%;
+    max-width: 300px;
+    height: auto;
+    border-radius: 8px;
+    box-shadow: 0 8px 20px rgba(0, 0, 0, 0.4);
+    border: 1px solid var(--secondary-color);
+    transition: transform 0.3s ease;
+}
+
+.app-screenshot:hover {
+    transform: scale(1.50);
+}
